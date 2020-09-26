@@ -5,9 +5,7 @@ import Button from './Button';
 import styles from './NavigationButton.module.css';
 
 const NavigationButton = ({ children }) => (
-  <div>
-    <Button className={styles.button}>{children}</Button>
-  </div>
+  <Button className={styles.navButton}>{children}</Button>
 );
 
 export default NavigationButton;

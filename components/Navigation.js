@@ -13,10 +13,10 @@ import {
   More,
 } from './icons';
 
-import styles from './NavigationButton.module.css';
+import styles from './Navigation.module.css';
 
 const Navigation = ({ children }) => (
-  <nav>
+  <nav className={styles.nav}>
     <NavigationButton>
       <Twitter />
     </NavigationButton>
