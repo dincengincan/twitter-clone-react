@@ -9,7 +9,7 @@
     "start": "next start",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "icon": "svgr assets/icons -d components/icons --icon"
+    "icon": "svgr assets/icons -d components/icons --icon --replace-attr-values \"#fff=currentColor\""
   },
   "keywords": [],
   "author": "",
