@@ -41,7 +41,10 @@ const Navigation = ({ childreni, selectedItem }) => (
       <span className={styles.navLabel}>Lists</span>
     </NavigationButton>
 
-    <NavigationButton selected={selectedItem === 'notification'}>
+    <NavigationButton
+      notification={5}
+      selected={selectedItem === 'notification'}
+    >
       <Notification />
       <span className={styles.navLabel}>Notification</span>
     </NavigationButton>

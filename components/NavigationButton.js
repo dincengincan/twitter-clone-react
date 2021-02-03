@@ -4,13 +4,16 @@ import Button from './Button';
 
 import styles from './NavigationButton.module.css';
 
-const NavigationButton = ({ selected, children }) => (
+const NavigationButton = ({ notification, selected, children }) => (
   <Button
     className={
       selected ? `${styles.navButton} ${styles.selected} ` : styles.navButton
     }
   >
     {children}
+    {notification && (
+      <span className={styles.notification}>{notification}</span>
+    )}
   </Button>
 );
 
