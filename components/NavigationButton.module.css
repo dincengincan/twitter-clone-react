@@ -1,8 +1,22 @@
 .navButton {
-  background-color: gray;
-  padding: 20px;
+  color: var(--c-text-color);
+  padding: 10px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
 }
 
-.navButton svg {
-  color: white;
+.navButton:hover {
+  background-color: var(--c-theme-20);
+}
+
+.navButton.selected {
+  color: var(--c-theme);
+}
+
+svg {
+  font-size: 26px;
+  color: var(--c-text-color);
 }

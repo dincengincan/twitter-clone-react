@@ -15,50 +15,50 @@ import {
 
 import styles from './Navigation.module.css';
 
-const Navigation = ({ children }) => (
+const Navigation = ({ childreni, selectedItem }) => (
   <nav className={styles.nav}>
     <NavigationButton>
       <Twitter />
     </NavigationButton>
 
-    <NavigationButton>
+    <NavigationButton selected={selectedItem === 'home'}>
       <Home />
-      <span>Home</span>
+      <span className={styles.navLabel}>Home</span>
     </NavigationButton>
 
-    <NavigationButton>
+    <NavigationButton selected={selectedItem === 'explore'}>
       <Explore />
-      <span>Explore</span>
+      <span className={styles.navLabel}>Explore</span>
     </NavigationButton>
 
-    <NavigationButton>
+    <NavigationButton selected={selectedItem === 'profile'}>
       <Profile />
-      <span>Profile</span>
+      <span className={styles.navLabel}>Profile</span>
     </NavigationButton>
 
-    <NavigationButton>
+    <NavigationButton selected={selectedItem === 'lists'}>
       <Lists />
-      <span>Lists</span>
+      <span className={styles.navLabel}>Lists</span>
     </NavigationButton>
 
-    <NavigationButton>
+    <NavigationButton selected={selectedItem === 'notification'}>
       <Notification />
-      <span>Notification</span>
+      <span className={styles.navLabel}>Notification</span>
     </NavigationButton>
 
-    <NavigationButton>
+    <NavigationButton selected={selectedItem === 'messages'}>
       <Messages />
-      <span>Messages</span>
+      <span className={styles.navLabel}>Messages</span>
     </NavigationButton>
 
-    <NavigationButton>
+    <NavigationButton selected={selectedItem === 'bookmark'}>
       <Bookmark />
-      <span>Bookmark</span>
+      <span className={styles.navLabel}>Bookmark</span>
     </NavigationButton>
 
-    <NavigationButton>
+    <NavigationButton selected={selectedItem === 'more'}>
       <More />
-      <span>More</span>
+      <span className={styles.navLabel}>More</span>
     </NavigationButton>
   </nav>
 );
