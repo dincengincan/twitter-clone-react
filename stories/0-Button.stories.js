@@ -5,7 +5,8 @@ import NavigationButton from '../components/NavigationButton';
 import Navigation from '../components/Navigation';
 import { Home } from '../components/icons';
 
-import styles from '../components/Navigation.module.css';
+import Typography from '../components/Typography';
+import ThemeButton from '../components/ThemeButton';
 
 export default {
   title: 'Buttons',
@@ -14,10 +15,12 @@ export default {
 
 export const BaseButton = () => <Button>Deneme</Button>;
 
+export const ThemeButton = () => <ThemeButton>Deneme</ThemeButton>;
+
 export const NavButton = () => (
   <NavigationButton>
     <Home />
-    <span className={styles.navLabel}>Home</span>
+    <Typography>Home</Typography>
   </NavigationButton>
 );
 
