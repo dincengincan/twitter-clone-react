@@ -1,9 +1,21 @@
 .button {
-  background-color: black;
-  color: white;
+  color: var(--c-text-color);
+  background-color: transparent;
+
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 99px;
+  transition: var(--t-fade);
+}
+
+.button:hover {
+  background-color: var(--c-theme-20);
+  color: var(--c-theme);
 }
 
 .button svg {
-  color: white;
+  color: var(--c-text-color);
 }
