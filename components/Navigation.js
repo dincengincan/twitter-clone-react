@@ -1,6 +1,8 @@
 import React from 'react';
 
 import NavigationButton from './NavigationButton';
+import Typography from './Typography';
+
 import {
   Twitter,
   Home,
@@ -15,7 +17,7 @@ import {
 
 import styles from './Navigation.module.css';
 
-const Navigation = ({ childreni, selectedItem }) => (
+const Navigation = ({ selectedItem }) => (
   <nav className={styles.nav}>
     <NavigationButton>
       <Twitter />
@@ -23,22 +25,22 @@ const Navigation = ({ childreni, selectedItem }) => (
 
     <NavigationButton selected={selectedItem === 'home'}>
       <Home />
-      <span className={styles.navLabel}>Home</span>
+      <Typography className={styles.navLabel}>Home</Typography>
     </NavigationButton>
 
     <NavigationButton selected={selectedItem === 'explore'}>
       <Explore />
-      <span className={styles.navLabel}>Explore</span>
+      <Typography className={styles.navLabel}>Explore</Typography>
     </NavigationButton>
 
     <NavigationButton selected={selectedItem === 'profile'}>
       <Profile />
-      <span className={styles.navLabel}>Profile</span>
+      <Typography className={styles.navLabel}>Profile</Typography>
     </NavigationButton>
 
     <NavigationButton selected={selectedItem === 'lists'}>
       <Lists />
-      <span className={styles.navLabel}>Lists</span>
+      <Typography className={styles.navLabel}>Lists</Typography>
     </NavigationButton>
 
     <NavigationButton
@@ -46,22 +48,22 @@ const Navigation = ({ childreni, selectedItem }) => (
       selected={selectedItem === 'notification'}
     >
       <Notification />
-      <span className={styles.navLabel}>Notification</span>
+      <Typography className={styles.navLabel}>Notification</Typography>
     </NavigationButton>
 
     <NavigationButton selected={selectedItem === 'messages'}>
       <Messages />
-      <span className={styles.navLabel}>Messages</span>
+      <Typography className={styles.navLabel}>Messages</Typography>
     </NavigationButton>
 
     <NavigationButton selected={selectedItem === 'bookmark'}>
       <Bookmark />
-      <span className={styles.navLabel}>Bookmark</span>
+      <Typography className={styles.navLabel}>Bookmark</Typography>
     </NavigationButton>
 
     <NavigationButton selected={selectedItem === 'more'}>
       <More />
-      <span className={styles.navLabel}>More</span>
+      <Typography className={styles.navLabel}>More</Typography>
     </NavigationButton>
   </nav>
 );
