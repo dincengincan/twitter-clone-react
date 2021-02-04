@@ -7,10 +7,16 @@
   align-items: center;
   cursor: pointer;
   background-color: transparent;
+  transition: var(--t-fade);
 }
 
 .navButton:hover {
   background-color: var(--c-theme-20);
+  color: var(--c-theme);
+}
+
+.navButton:hover > svg {
+  color: var(--c-theme);
 }
 
 .navButton.selected {
@@ -27,6 +33,7 @@
   font-size: 11px;
   border-radius: 17px;
   border: 1px solid var(--c-primary);
+  color: var(--c-text-color);
 }
 
 svg {
