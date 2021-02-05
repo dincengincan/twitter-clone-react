@@ -6,6 +6,7 @@
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
   border-radius: 99px;
   transition: var(--t-fade);
@@ -18,4 +19,8 @@
 
 .button svg {
   color: var(--c-text-color);
+}
+
+.fullWidth {
+  width: 100%;
 }
