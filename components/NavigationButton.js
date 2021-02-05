@@ -3,14 +3,13 @@ import React from 'react';
 import Button from './Button';
 
 import styles from './NavigationButton.module.css';
-import baseStyles from './Button.module.css';
 
 const NavigationButton = ({ notification, selected, children }) => (
   <Button
     className={
       selected
-        ? `${baseStyles.button} ${styles.navButton} ${styles.selected}`
-        : `${baseStyles.button} ${styles.navButton}`
+        ? `${styles.navButton} ${styles.selected}`
+        : `${styles.navButton}`
     }
   >
     {children}

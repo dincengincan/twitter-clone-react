@@ -1,0 +1,11 @@
+.themeButton {
+  background-color: var(--c-theme);
+  color: var(--c-text-color);
+
+  padding: 0 15px;
+  height: 40px;
+}
+
+.large {
+  height: 47px;
+}
