@@ -1,0 +1,7 @@
+.stack {
+  --gap: 10px;
+}
+
+.stack > * ~ * {
+  margin-top: var(--gap);
+}
