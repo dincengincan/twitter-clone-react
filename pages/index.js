@@ -1,12 +1,16 @@
-import Button from '../components/Button';
+import Layout from '../components/Layout';
+import useWindowSize, { WINDOW_SIZES } from '../hooks/useWindowSize';
 
-function HomePage() {
+const HomePage = () => {
+  const isLarge = useWindowSize(WINDOW_SIZES.LARGE);
+
   return (
-    <div>
-      Welcome to Next.js!
-      <Button>DENEME</Button>
-    </div>
+    <Layout>
+      <div>Sidebar</div>
+      <div>Middlebar</div>
+      {isLarge && <div>Extrabar</div>}
+    </Layout>
   );
-}
+};
 
 export default HomePage;
