@@ -4,6 +4,7 @@ import styles from './ProfileBox.module.css';
 
 import Button from '../components/Button';
 import Photo from '../components/Photo';
+import Typography from '../components/Typography';
 import ArrowBottom from '../components/icons/ArrowBottom';
 
 const DEFAULT_PROFILE_INFO = {
@@ -18,8 +19,8 @@ const ProfileBox = ({
   <Button className={styles.ProfileBox}>
     <Photo />
     <div className={styles.textContainer}>
-      <p>{name}</p>
-      <p>{slug}</p>
+      <Typography>{name}</Typography>
+      <Typography bold={false}>{slug}</Typography>
     </div>
     <ArrowBottom className={styles.arrowIcon} />
   </Button>
