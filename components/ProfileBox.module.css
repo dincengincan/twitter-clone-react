@@ -1,0 +1,16 @@
+.ProfileBox {
+  padding: 10px;
+  text-align: initial;
+}
+
+.ProfileBox:hover {
+  color: var(--c-text-color);
+}
+
+.textContainer {
+  margin: 0 20px 0 10px;
+}
+
+.arrowIcon {
+  margin-left: auto;
+}
