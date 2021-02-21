@@ -7,7 +7,8 @@
   color: var(--c-theme);
 }
 
-.navButton.selected {
+.navButton.selected,
+.navButton.selected > svg {
   color: var(--c-theme);
 }
 

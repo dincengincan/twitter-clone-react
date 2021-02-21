@@ -17,54 +17,32 @@ import {
 
 import styles from './Navigation.module.css';
 
-const Navigation = ({ selectedItem }) => (
+const navigationItems = [
+  { key: 'Twitter', component: <Twitter /> },
+  { name: 'Home', component: <Home /> },
+  { name: 'Explore', component: <Explore /> },
+  { name: 'Profile', component: <Profile /> },
+  { name: 'Lists', component: <Lists /> },
+  { name: 'Notification', component: <Notification />, notification: 5 },
+  { name: 'Messages', component: <Messages /> },
+  { name: 'Bookmark', component: <Bookmark /> },
+  { name: 'More', component: <More /> },
+];
+
+const Navigation = ({ selectedItem = 'Home', flat }) => (
   <nav className={styles.nav}>
-    <NavigationButton>
-      <Twitter />
-    </NavigationButton>
-
-    <NavigationButton selected={selectedItem === 'home'}>
-      <Home />
-      <Typography className={styles.navLabel}>Home</Typography>
-    </NavigationButton>
-
-    <NavigationButton selected={selectedItem === 'explore'}>
-      <Explore />
-      <Typography className={styles.navLabel}>Explore</Typography>
-    </NavigationButton>
-
-    <NavigationButton selected={selectedItem === 'profile'}>
-      <Profile />
-      <Typography className={styles.navLabel}>Profile</Typography>
-    </NavigationButton>
-
-    <NavigationButton selected={selectedItem === 'lists'}>
-      <Lists />
-      <Typography className={styles.navLabel}>Lists</Typography>
-    </NavigationButton>
-
-    <NavigationButton
-      notification={5}
-      selected={selectedItem === 'notification'}
-    >
-      <Notification />
-      <Typography className={styles.navLabel}>Notification</Typography>
-    </NavigationButton>
-
-    <NavigationButton selected={selectedItem === 'messages'}>
-      <Messages />
-      <Typography className={styles.navLabel}>Messages</Typography>
-    </NavigationButton>
-
-    <NavigationButton selected={selectedItem === 'bookmark'}>
-      <Bookmark />
-      <Typography className={styles.navLabel}>Bookmark</Typography>
-    </NavigationButton>
-
-    <NavigationButton selected={selectedItem === 'more'}>
-      <More />
-      <Typography className={styles.navLabel}>More</Typography>
-    </NavigationButton>
+    {navigationItems.map((item) => {
+      return (
+        <NavigationButton
+          key={item.key || item.name}
+          notification={item.notification}
+          selected={selectedItem === item.name}
+        >
+          {item.component}
+          {item.name && !flat && <Typography>{item.name}</Typography>}
+        </NavigationButton>
+      );
+    })}
   </nav>
 );
 
