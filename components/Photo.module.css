@@ -2,7 +2,7 @@
   width: 47px;
 }
 
-img {
+.photo > img {
   border-radius: 99px;
   display: block;
   width: 100%;

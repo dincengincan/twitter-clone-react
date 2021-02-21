@@ -1,4 +1,8 @@
 import Layout from '../components/Layout';
+import Extra from '../components/Extra';
+import Main from '../components/Main';
+import Sidebar from '../components/Sidebar';
+
 import useWindowSize, { WINDOW_SIZES } from '../hooks/useWindowSize';
 
 const HomePage = () => {
@@ -6,9 +10,9 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <div>Sidebar</div>
-      <div>Middlebar</div>
-      {isLarge && <div>Extrabar</div>}
+      <Sidebar />
+      <Main />
+      {isLarge && <Extra />}
     </Layout>
   );
 };

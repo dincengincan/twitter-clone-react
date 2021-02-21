@@ -1,10 +1,11 @@
 .layout {
   display: flex;
+  height: 100vh;
 }
 
 .layout > :first-child,
 .layout > :last-child {
-  flex: 0 0 200px;
+  flex: 0 0 230px;
 }
 
 .layout > :nth-child(2) {

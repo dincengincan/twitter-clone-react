@@ -14,3 +14,7 @@
 .arrowIcon {
   margin-left: auto;
 }
+
+.slug {
+  color: var(--c-gray);
+}

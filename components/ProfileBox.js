@@ -8,7 +8,7 @@ import Typography from '../components/Typography';
 import ArrowBottom from '../components/icons/ArrowBottom';
 
 const DEFAULT_PROFILE_INFO = {
-  name: 'Engin Can Dinç',
+  name: 'Engin Can',
   slug: '@janengin',
 };
 
@@ -20,7 +20,9 @@ const ProfileBox = ({
     <Photo />
     <div className={styles.textContainer}>
       <Typography>{name}</Typography>
-      <Typography bold={false}>{slug}</Typography>
+      <Typography className={styles.slug} bold={false}>
+        {slug}
+      </Typography>
     </div>
     <ArrowBottom className={styles.arrowIcon} />
   </Button>
