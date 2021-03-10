@@ -1,13 +1,27 @@
 .layout {
   display: flex;
   height: 100vh;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-.layout > :first-child,
-.layout > :last-child {
+.layout > :first-child {
   flex: 0 0 230px;
+}
+.layout > :last-child {
+  flex: 0 0 300px;
 }
 
 .layout > :nth-child(2) {
   flex: 1;
+}
+
+@media screen and (max-width: 1099px) {
+  .layout {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .layout > :first-child {
+    flex: 0 0 auto;
+  }
 }

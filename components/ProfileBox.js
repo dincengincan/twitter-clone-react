@@ -15,16 +15,21 @@ const DEFAULT_PROFILE_INFO = {
 const ProfileBox = ({
   name = DEFAULT_PROFILE_INFO.name,
   slug = DEFAULT_PROFILE_INFO.slug,
+  flat,
 }) => (
   <Button className={styles.ProfileBox}>
     <Photo />
-    <div className={styles.textContainer}>
-      <Typography>{name}</Typography>
-      <Typography className={styles.slug} bold={false}>
-        {slug}
-      </Typography>
-    </div>
-    <ArrowBottom className={styles.arrowIcon} />
+    {!flat && (
+      <>
+        <div className={styles.textContainer}>
+          <Typography>{name}</Typography>
+          <Typography className={styles.slug} bold={false}>
+            {slug}
+          </Typography>
+        </div>
+        <ArrowBottom className={styles.arrowIcon} />
+      </>
+    )}
   </Button>
 );
 
