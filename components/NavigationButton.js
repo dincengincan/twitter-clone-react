@@ -12,10 +12,10 @@ const NavigationButton = ({ notification, selected, children }) => (
         : `${styles.navButton}`
     }
   >
-    {children}
     {notification && (
       <span className={styles.notification}>{notification}</span>
     )}
+    {children}
   </Button>
 );
 
