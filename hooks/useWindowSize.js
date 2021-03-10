@@ -38,7 +38,7 @@ const useWindowSize = (size) => {
       if (windowSize.width < BREAKPOINTS.SMALL)
         return WINDOW_SIZES.SMALL === size;
       if (
-        windowSize.width > BREAKPOINTS.SMALL &&
+        windowSize.width >= BREAKPOINTS.SMALL &&
         windowSize.width < BREAKPOINTS.MEDIUM
       )
         return WINDOW_SIZES.MEDIUM === size;
