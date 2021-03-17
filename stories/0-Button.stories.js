@@ -44,4 +44,4 @@ export const NavButton = () => (
   </NavigationButton>
 );
 
-export const Nav = () => <Navigation selectedItem="home" />;
+export const Nav = () => <Navigation />;

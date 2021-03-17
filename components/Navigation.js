@@ -1,5 +1,6 @@
+import React from 'react';
+
 import { useRouter } from 'next/router';
-import { Link } from 'next/link';
 
 import NavigationButton from './NavigationButton';
 import Typography from './Typography';
@@ -45,7 +46,6 @@ const Navigation = ({ flat }) => {
             key={item.key || item.name}
             notification={item.notification}
             selected={history.pathname === item.pathname}
-            pathname={item.pathname}
             onClick={() => history.push(item.pathname)}
           >
             {item.component}
