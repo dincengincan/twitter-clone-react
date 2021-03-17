@@ -26,13 +26,13 @@ const navigationItems = [
   { name: 'Profile', component: <Profile />, pathname: '/profile' },
   { name: 'Lists', component: <Lists />, pathname: '/lists' },
   {
-    name: 'Notification',
+    name: 'Notifications',
     component: <Notification />,
     notification: 5,
-    pathname: '/notification',
+    pathname: '/notifications',
   },
   { name: 'Messages', component: <Messages />, pathname: '/messages' },
-  { name: 'Bookmark', component: <Bookmark />, pathname: '/bookmark' },
+  { name: 'Bookmarks', component: <Bookmark />, pathname: '/bookmarks' },
   { name: 'More', component: <More />, pathname: '/more' },
 ];
 
