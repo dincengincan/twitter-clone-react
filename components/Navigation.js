@@ -1,4 +1,5 @@
-import React from 'react';
+import { useRouter } from 'next/router';
+import { Link } from 'next/link';
 
 import NavigationButton from './NavigationButton';
 import Typography from './Typography';
@@ -18,32 +19,42 @@ import {
 import styles from './Navigation.module.css';
 
 const navigationItems = [
-  { key: 'Twitter', component: <Twitter /> },
-  { name: 'Home', component: <Home /> },
-  { name: 'Explore', component: <Explore /> },
-  { name: 'Profile', component: <Profile /> },
-  { name: 'Lists', component: <Lists /> },
-  { name: 'Notification', component: <Notification />, notification: 5 },
-  { name: 'Messages', component: <Messages /> },
-  { name: 'Bookmark', component: <Bookmark /> },
-  { name: 'More', component: <More /> },
+  { key: 'Twitter', component: <Twitter />, pathname: '/' },
+  { name: 'Home', component: <Home />, pathname: '/' },
+  { name: 'Explore', component: <Explore />, pathname: '/explore' },
+  { name: 'Profile', component: <Profile />, pathname: '/profile' },
+  { name: 'Lists', component: <Lists />, pathname: '/lists' },
+  {
+    name: 'Notification',
+    component: <Notification />,
+    notification: 5,
+    pathname: '/notification',
+  },
+  { name: 'Messages', component: <Messages />, pathname: '/messages' },
+  { name: 'Bookmark', component: <Bookmark />, pathname: '/bookmark' },
+  { name: 'More', component: <More />, pathname: '/more' },
 ];
 
-const Navigation = ({ selectedItem = 'Home', flat }) => (
-  <nav className={styles.nav}>
-    {navigationItems.map((item) => {
-      return (
-        <NavigationButton
-          key={item.key || item.name}
-          notification={item.notification}
-          selected={selectedItem === item.name}
-        >
-          {item.component}
-          {item.name && !flat && <Typography>{item.name}</Typography>}
-        </NavigationButton>
-      );
-    })}
-  </nav>
-);
+const Navigation = ({ flat }) => {
+  const history = useRouter();
+  return (
+    <nav className={styles.nav}>
+      {navigationItems.map((item) => {
+        return (
+          <NavigationButton
+            key={item.key || item.name}
+            notification={item.notification}
+            selected={history.pathname === item.pathname}
+            pathname={item.pathname}
+            onClick={() => history.push(item.pathname)}
+          >
+            {item.component}
+            {item.name && !flat && <Typography>{item.name}</Typography>}
+          </NavigationButton>
+        );
+      })}
+    </nav>
+  );
+};
 
 export default Navigation;

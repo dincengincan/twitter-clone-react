@@ -1,11 +1,10 @@
-import React from 'react';
-
 import Button from './Button';
 
 import styles from './NavigationButton.module.css';
 
-const NavigationButton = ({ notification, selected, children }) => (
+const NavigationButton = ({ onClick, notification, selected, children }) => (
   <Button
+    onClick={onClick}
     className={
       selected
         ? `${styles.navButton} ${styles.selected}`

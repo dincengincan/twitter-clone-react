@@ -1,9 +1,8 @@
-import React from 'react';
-
 import styles from './Button.module.css';
 
-const Button = ({ fullWidth, children, className }) => (
+const Button = ({ fullWidth, children, className, onClick }) => (
   <button
+    onClick={onClick}
     type="button"
     className={
       styles.button +
