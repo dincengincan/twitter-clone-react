@@ -13,9 +13,11 @@ const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
       <Navigation flat={!isLarge} />
-      <ThemeButton large fullWidth={isLarge}>
-        Tweet
-      </ThemeButton>
+      <div className={styles.themeButtonWrapper}>
+        <ThemeButton large fullWidth={isLarge}>
+          Tweet
+        </ThemeButton>
+      </div>
       <ProfileBox flat={!isLarge} />
     </div>
   );
