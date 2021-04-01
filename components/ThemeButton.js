@@ -5,7 +5,7 @@ import Button from './Button';
 import styles from './ThemeButton.module.css';
 import baseStyles from './Button.module.css';
 
-const ThemeButton = ({ large, fullWidth, children }) => (
+const ThemeButton = ({ large, fullWidth = true, children }) => (
   <Button
     fullWidth={fullWidth}
     className={
