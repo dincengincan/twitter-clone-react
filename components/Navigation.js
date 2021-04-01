@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useRouter } from 'next/router';
+import { useRouter, withRouter } from 'next/router';
 
 import NavigationButton from './NavigationButton';
 import Typography from './Typography';
@@ -15,25 +15,66 @@ import {
   Messages,
   Bookmark,
   More,
+  HomeFill,
+  ExplorerFill,
+  ProfileFill,
+  ListsFill,
+  NotificationFill,
+  MessagesFill,
+  BookmarkFill,
 } from './icons';
 
 import styles from './Navigation.module.css';
 
 const navigationItems = [
-  { key: 'Twitter', component: <Twitter />, pathname: '/' },
-  { name: 'Home', component: <Home />, pathname: '/' },
-  { name: 'Explore', component: <Explore />, pathname: '/explore' },
-  { name: 'Profile', component: <Profile />, pathname: '/profile' },
-  { name: 'Lists', component: <Lists />, pathname: '/lists' },
+  {
+    key: 'Twitter',
+    icon: <Twitter style={{ color: 'white' }} />,
+    pathname: '/',
+  },
+  { name: 'Home', icon: <Home />, selectedIcon: <HomeFill />, pathname: '/' },
+  {
+    name: 'Explore',
+    icon: <Explore />,
+    selectedIcon: <ExplorerFill />,
+    pathname: '/explore',
+  },
+  {
+    name: 'Profile',
+    icon: <Profile />,
+    selectedIcon: <ProfileFill />,
+    pathname: '/profile',
+  },
+  {
+    name: 'Lists',
+    icon: <Lists />,
+    selectedIcon: <ListsFill />,
+    pathname: '/lists',
+  },
   {
     name: 'Notifications',
-    component: <Notification />,
+    icon: <Notification />,
     notification: 5,
+    selectedIcon: <NotificationFill />,
     pathname: '/notifications',
   },
-  { name: 'Messages', component: <Messages />, pathname: '/messages' },
-  { name: 'Bookmarks', component: <Bookmark />, pathname: '/bookmarks' },
-  { name: 'More', component: <More />, pathname: '/more' },
+  {
+    name: 'Messages',
+    icon: <Messages />,
+    selectedIcon: <MessagesFill />,
+    pathname: '/messages',
+  },
+  {
+    name: 'Bookmarks',
+    icon: <Bookmark />,
+    selectedIcon: <BookmarkFill />,
+    pathname: '/bookmarks',
+  },
+  {
+    name: 'More',
+    icon: <More />,
+    pathname: '/more',
+  },
 ];
 
 const Navigation = ({ flat }) => {
@@ -41,14 +82,16 @@ const Navigation = ({ flat }) => {
   return (
     <nav className={styles.nav}>
       {navigationItems.map((item) => {
+        const isSelected = history.pathname === item.pathname;
         return (
           <NavigationButton
             key={item.key || item.name}
             notification={item.notification}
-            selected={history.pathname === item.pathname}
+            selected={isSelected}
             onClick={() => history.push(item.pathname)}
           >
-            {item.component}
+            {isSelected ? item.selectedIcon || item.icon : item.icon}
+
             {item.name && !flat && <Typography>{item.name}</Typography>}
           </NavigationButton>
         );
